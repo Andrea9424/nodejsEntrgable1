@@ -15,7 +15,7 @@ const RepairsMotors = sequelize.define("repair_motors", {
 
   status: {
     type: DataTypes.ENUM("completed", "pending", "cancelled"),
-    defaultValue: "pendig",
+    defaultValue: "pending",
     allowNull: false,
   },
   userId: {

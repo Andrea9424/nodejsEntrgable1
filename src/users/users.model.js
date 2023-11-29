@@ -1,4 +1,4 @@
-const { DataTypes } = require("sequelize");
+const { DataTypes  } = require("sequelize");
 const { sequelize } = require("../config/database/database");
 
 const UsersMotors = sequelize.define("users_motors", {
@@ -21,13 +21,13 @@ const UsersMotors = sequelize.define("users_motors", {
     type: DataTypes.STRING,
   },
   rol: {
-    type: DataTypes.STRING,
+    type: DataTypes.ENUM("client", "employee"),
   },
 
   status: {
-    type: DataTypes.BOOLEAN,
-    defaultValue: true,
-    allowNull: false,
+    type: DataTypes.ENUM("pending", "completed", "cancelled"),
+    defaultValue: "pending",
+    
   },
 });
 

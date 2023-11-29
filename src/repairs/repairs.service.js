@@ -1,10 +1,10 @@
 const RepairsMotor = require("../repairs/repairs.model");
 
 class RepairsMotorsServices {
-  static async findAll(data) {
+  static async findAll() {
     return await RepairsMotor.findAll({
       where: {
-        status: "pendig",
+        status: "pending",
       },
     });
   }
@@ -17,7 +17,7 @@ class RepairsMotorsServices {
     return await RepairsMotor.findOne({
       where: {
         id: id,
-        status: "pendig",
+        status: "pending",
       },
     });
   }

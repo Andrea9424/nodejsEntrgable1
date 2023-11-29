@@ -48,6 +48,7 @@ const create = async (req, res) => {
       data: UsersMotor,
     });
   } catch (error) {
+    console.log(error);
     return res.status(500).json({
       message: " There was a mistake",
     });
@@ -91,8 +92,11 @@ const delet = async (req, res) => {
     }
 
     await UserMotorsServices.delete(user);
-    return res.status(204).json(null);
+    return res.json({
+      message: "fue eliminado",
+    });
   } catch (error) {
+    console.log(error);
     return res.status(500).json({
       message: " There was a mistake",
     });
